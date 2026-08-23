@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09051a">
+<title>For Nonu 🫂❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;background:#070313;color:#fff;overflow-x:hidden}
+body{background:
+ radial-gradient(circle at 20% 20%,rgba(114,79,255,.25),transparent 30%),
+ radial-gradient(circle at 80% 30%,rgba(255,93,160,.18),transparent 28%),
+ linear-gradient(160deg,#070313,#16072b 55%,#05020d)}
+button{font:inherit}
+#stars,#stars2{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.65;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{50%{opacity:.12;transform:scale(.6)}}
+.page{position:relative;z-index:1;min-height:100svh;padding:28px 18px 50px;display:none;align-items:center;justify-content:center}
+.page.active{display:flex}
+.card{width:min(760px,100%);background:rgba(16,10,35,.72);border:1px solid rgba(255,255,255,.13);box-shadow:0 20px 80px rgba(0,0,0,.45);backdrop-filter:blur(18px);border-radius:30px;padding:28px;overflow:hidden}
+.center{text-align:center}
+.kicker{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;opacity:.62}
+h1,h2{font-family:"Playfair Display",serif;line-height:1.05;margin:12px 0 18px}
+h1{font-size:clamp(2.7rem,10vw,5.7rem)}
+h2{font-size:clamp(2rem,7vw,3.4rem)}
+p{font-size:1.04rem;line-height:1.75;color:rgba(255,255,255,.84)}
+.small{font-size:.88rem;opacity:.6}
+.btn{border:0;border-radius:999px;padding:14px 21px;background:linear-gradient(135deg,#ff5d9e,#8d70ff);color:#fff;font-weight:700;cursor:pointer;box-shadow:0 10px 30px rgba(175,85,255,.25);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.secondary{background:rgba(255,255,255,.08);box-shadow:none;border:1px solid rgba(255,255,255,.12)}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.heart{font-size:4rem;animation:float 3s ease-in-out infinite;display:inline-block}
+@keyframes float{50%{transform:translateY(-9px) rotate(3deg)}}
+.typing{min-height:3.5em}
+.quote{font-family:"Playfair Display",serif;font-style:italic;font-size:1.35rem;line-height:1.6;text-align:center;margin:24px 0}
+.timeline{display:grid;gap:12px;margin-top:20px}
+.memory{padding:18px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);transform:translateX(-10px);opacity:0;transition:.5s}
+.memory.show{transform:none;opacity:1}
+.memory b{display:block;margin-bottom:5px}
+.polaroids{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.polaroid{background:#f5eee6;color:#20182b;padding:10px 10px 22px;transform:rotate(-2deg);box-shadow:0 15px 35px rgba(0,0,0,.3)}
+.polaroid:nth-child(2){transform:rotate(3deg);margin-top:15px}
+.polaroid:nth-child(3){transform:rotate(-1deg)}
+.fakephoto{height:150px;border-radius:4px;background:linear-gradient(145deg,#211443,#7d5cff 45%,#ff7cae);display:grid;place-items:center;font-size:2.2rem}
+.polaroid span{display:block;text-align:center;font-family:"Playfair Display",serif;margin-top:9px}
+.gamebox{text-align:center;padding:25px;border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1)}
+.progress{height:7px;background:rgba(255,255,255,.1);border-radius:20px;overflow:hidden;margin:20px 0}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff5d9e,#8d70ff);transition:width .5s}
+.choice{display:grid;gap:10px;margin-top:20px}
+.choice button{padding:15px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);color:#fff;cursor:pointer}
+.choice button:hover{background:rgba(255,255,255,.11)}
+.confession{font-size:clamp(1.15rem,3.5vw,1.45rem);line-height:1.85}
+.signature{font-family:"Playfair Display",serif;font-size:1.4rem;font-style:italic}
+.nav{position:fixed;z-index:10;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:7px;padding:7px;border-radius:999px;background:rgba(10,7,20,.78);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px)}
+.dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(255,255,255,.3);padding:0;cursor:pointer}
+.dot.active{background:#ff7cb4;box-shadow:0 0 10px #ff7cb4}
+.music{position:fixed;right:15px;top:15px;z-index:11}
+.toast{position:fixed;left:50%;top:18px;transform:translate(-50%,-130%);z-index:20;background:rgba(20,12,40,.92);border:1px solid rgba(255,255,255,.13);padding:12px 16px;border-radius:14px;transition:.35s;max-width:90%}
+.toast.show{transform:translate(-50%,0)}
+@media(max-width:560px){
+ .card{padding:22px 18px;border-radius:24px}
+ .polaroids{grid-template-columns:1fr}
+ .polaroid{width:75%;margin:auto!important}
+ p{font-size:.98rem}
+}
+</style>
+</head>
+<body>
+<div id="stars"></div><div id="stars2"></div>
+<div class="toast" id="toast"></div>
+<button class="btn secondary music" id="musicBtn" onclick="toggleAmbient()">♫ ambience</button>
+
+<section class="page active">
+<div class="card center">
+  <div class="heart">🫂</div>
+  <div class="kicker">a tiny website made for one person</div>
+  <h1>Hey Nonu.</h1>
+  <p class="typing" id="typeText"></p>
+  <div class="actions"><button class="btn" onclick="next()">Tap to continue →</button></div>
+  <p class="small">Best viewed with headphones… but only if you want. 🥹</p>
+</div>
+</section>
+
+<section class="page">
+<div class="card">
+  <div class="kicker">chapter 01 · somehow</div>
+  <h2>I don't know when it happened.</h2>
+  <p>I don't remember the exact moment when you stopped being just someone I talked to and became someone I genuinely wanted in my life.</p>
+  <p>It happened somewhere between the stupid jokes, the late-night conversations, the teasing, the repost rituals, and all the little things that probably looked ordinary from the outside.</p>
+  <div class="quote">“Some people become important quietly. You became important without me even noticing.”</div>
+  <div class="actions"><button class="btn" onclick="next()">Next 🥹</button></div>
+</div>
+</section>
+
+<section class="page">
+<div class="card">
+  <div class="kicker">chapter 02 · our little universe</div>
+  <h2>Things that feel very us.</h2>
+  <div class="polaroids">
+    <div class="polaroid"><div class="fakephoto">🌙</div><span>late night talks</span></div>
+    <div class="polaroid"><div class="fakephoto">😝</div><span>repost investigations</span></div>
+    <div class="polaroid"><div class="fakephoto">📸</div><span>photo booth dreams</span></div>
+  </div>
+  <p class="small center">These are placeholders—you can replace them with your real photos later.</p>
+  <div class="actions"><button class="btn" onclick="next()">Keep going →</button></div>
+</div>
+</section>
+
+<section class="page">
+<div class="card">
+  <div class="kicker">chapter 03 · the messy parts</div>
+  <h2>Even the complicated parts matter.</h2>
+  <div class="timeline">
+    <div class="memory"><b>🫂 “I feel safe with you.”</b>Somehow, talking to you became a place where I could say things I usually keep inside.</div>
+    <div class="memory"><b>😂 Bhoondu & cutu</b>The random teasing, jealousy jokes, “block” jokes and the things only we understand.</div>
+    <div class="memory"><b>🌧️ The difficult days</b>Family pressure, confusion, college stress, and those moments when circumstances made everything harder.</div>
+    <div class="memory"><b>❤️ And still...</b>We kept finding our way back to a conversation, a laugh, or a little bit of comfort.</div>
+  </div>
+  <div class="actions"><button class="btn" onclick="next()">One more →</button></div>
+</div>
+</section>
+
+<section class="page">
+<div class="card">
+  <div class="kicker">chapter 04 · tiny game</div>
+  <h2>Okay, one question. 😭</h2>
+  <div class="gamebox">
+    <p id="gameQ">If you could keep one thing from our conversations forever, what would it be?</p>
+    <div class="choice">
+      <button onclick="gameAnswer('the laughs 😭')">The laughs 😭</button>
+      <button onclick="gameAnswer('the late-night talks 🌙')">The late-night talks 🌙</button>
+      <button onclick="gameAnswer('the stupid little moments 🥹')">The stupid little moments 🥹</button>
+      <button onclick="gameAnswer('all of it 🫂')">All of it 🫂</button>
+    </div>
+    <div class="progress"><i id="prog"></i></div>
+  </div>
+  <p class="small center">There is no wrong answer. I just wanted to make you smile.</p>
+</div>
+</section>
+
+<section class="page">
+<div class="card">
+  <div class="kicker">chapter 05 · what I really wanted to say</div>
+  <h2>Okay… no more hiding behind jokes.</h2>
+  <div class="confession">
+    <p>Nonu, I genuinely love you. ❤️</p>
+    <p>Not just because I like talking to you. Not just because we flirt or make each other jealous or because I enjoy our late-night calls.</p>
+    <p>I love the way I can be myself around you. I love that I can tell you about my stupid thoughts, my insecurities, my college stress, my future, and all the things I don't know how to explain to everyone else.</p>
+    <p>With you, I feel safe. Sometimes you genuinely feel like <strong>home</strong> to me. 🥹🫂</p>
+    <p>I don't think you're perfect, and I don't need you to be. And I don't want you to become some perfect version of yourself for me either.</p>
+    <p>I just like <strong>you</strong>. Exactly as you are.</p>
+  </div>
+  <div class="actions"><button class="btn" onclick="next()">There's one last thing…</button></div>
+</div>
+</section>
+
+<section class="page">
+<div class="card center">
+  <div class="heart">🌹</div>
+  <div class="kicker">the question</div>
+  <h2>Nonu, will you let me love you?</h2>
+  <p>I don't want an answer because you feel pressured. I don't want a perfect answer either.</p>
+  <p>I just wanted you to know what is in my heart. Whatever you feel, tell me honestly. I'll respect it. ❤️</p>
+  <div class="actions">
+    <button class="btn" onclick="answer('You just made me blush 😭❤️')">🥹 I feel it too</button>
+    <button class="btn secondary" onclick="answer('Take your time. I mean that. 🫂')">🫂 I need some time</button>
+  </div>
+  <p id="finalReply" class="quote"></p>
+  <p class="signature">— Archit, your bhoondu 🫂</p>
+</div>
+</section>
+
+<div class="nav" id="nav"></div>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+let current=0;
+const nav=document.getElementById('nav');
+pages.forEach((_,i)=>{
+ const d=document.createElement('button'); d.className='dot'+(i===0?' active':''); d.onclick=()=>go(i); nav.appendChild(d);
+});
+function go(i){
+ current=Math.max(0,Math.min(pages.length-1,i));
+ pages.forEach((p,n)=>p.classList.toggle('active',n===current));
+ [...nav.children].forEach((d,n)=>d.classList.toggle('active',n===current));
+ window.scrollTo({top:0,behavior:'smooth'});
+ reveal();
+}
+function next(){go(current+1)}
+function reveal(){
+ document.querySelectorAll('.memory').forEach((m,i)=>setTimeout(()=>m.classList.add('show'),100+i*150));
+}
+function toast(t){
+ const el=document.getElementById('toast'); el.textContent=t; el.classList.add('show');
+ setTimeout(()=>el.classList.remove('show'),2200);
+}
+function gameAnswer(t){
+ document.getElementById('gameQ').innerHTML=`<strong>Good choice. 😭</strong><br><br>${t}<br><br>Honestly, I would keep all of it. 🫂`;
+ document.getElementById('prog').style.width='100%';
+ toast('Okay, that was cute. 🥹');
+}
+function answer(t){
+ document.getElementById('finalReply').textContent=t;
+ burst();
+}
+function burst(){
+ for(let i=0;i<18;i++){
+  const s=document.createElement('span');
+  s.textContent=['❤️','🥹','🫂','✨','🌹'][Math.floor(Math.random()*5)];
+  s.style.cssText=`position:fixed;left:${40+Math.random()*20}%;top:55%;font-size:${16+Math.random()*24}px;z-index:30;pointer-events:none;animation:fly 1.8s ease-out forwards;`;
+  document.body.appendChild(s); setTimeout(()=>s.remove(),1900);
+ }
+}
+const style=document.createElement('style');
+style.textContent='@keyframes fly{to{transform:translate('+(-180+Math.random()*360)+'px,'+(-300-Math.random()*250)+'px) rotate(360deg);opacity:0}}';
+document.head.appendChild(style);
+
+let text='I made this because there are some things I can say better when I stop overthinking and just let my heart talk.';
+let idx=0;
+function type(){
+ const el=document.getElementById('typeText');
+ if(idx<text.length){el.textContent+=text[idx++];setTimeout(type,28)}
+}
+type(); reveal();
+
+for(let i=0;i<110;i++){
+ const s=document.createElement('span'); s.className='star';
+ s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
+ s.style.animationDelay=(Math.random()*3)+'s';
+ s.style.opacity=(.2+Math.random()*.7);
+ document.getElementById('stars').appendChild(s);
+}
+
+let audioCtx,osc,gain,playing=false;
+function toggleAmbient(){
+ if(!audioCtx){
+  audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+  osc=audioCtx.createOscillator(); gain=audioCtx.createGain();
+  osc.type='sine'; osc.frequency.value=220; gain.gain.value=.015;
+  osc.connect(gain).connect(audioCtx.destination); osc.start();
+ }
+ playing=!playing; gain.gain.value=playing?.015:0;
+ document.getElementById('musicBtn').textContent=playing?'♫ ambience on':'♫ ambience';
+}
+</script>
+</body>
+</html>
