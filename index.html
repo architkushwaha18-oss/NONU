@@ -1,249 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#09051a">
-<title>For Nonu 🫂❤️</title>
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#210817"><title>For Nonu ❤️</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;background:#070313;color:#fff;overflow-x:hidden}
-body{background:
- radial-gradient(circle at 20% 20%,rgba(114,79,255,.25),transparent 30%),
- radial-gradient(circle at 80% 30%,rgba(255,93,160,.18),transparent 28%),
- linear-gradient(160deg,#070313,#16072b 55%,#05020d)}
-button{font:inherit}
-#stars,#stars2{position:fixed;inset:0;pointer-events:none;z-index:0}
-.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.65;animation:twinkle 3s infinite ease-in-out}
-@keyframes twinkle{50%{opacity:.12;transform:scale(.6)}}
-.page{position:relative;z-index:1;min-height:100svh;padding:28px 18px 50px;display:none;align-items:center;justify-content:center}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;color:#fff}
+body{overflow-x:hidden;background:
+radial-gradient(circle at 15% 12%,rgba(255,177,207,.30),transparent 27%),
+radial-gradient(circle at 84% 25%,rgba(255,88,150,.23),transparent 30%),
+linear-gradient(160deg,#10040c,#2a0b1d 50%,#080207)}
+#stars,#hearts,#tulips{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#stars,#tulips{z-index:0}#hearts{z-index:2}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.55;animation:tw 3s infinite}
+@keyframes tw{50%{opacity:.12;transform:scale(.6)}}
+.tulip{position:absolute;bottom:-8px;font-size:clamp(30px,7vw,70px);opacity:.22;filter:drop-shadow(0 0 12px rgba(255,120,180,.3));animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(4deg) translateY(-5px)}}
+.heart{position:absolute;bottom:-50px;opacity:0;animation:rise linear forwards;filter:drop-shadow(0 0 8px rgba(255,120,180,.3))}
+@keyframes rise{0%{transform:translateY(0) scale(.7);opacity:0}12%{opacity:.7}55%{opacity:.35}100%{transform:translate3d(var(--d),-115vh,0) scale(1.2) rotate(12deg);opacity:0}}
+.page{position:relative;z-index:1;min-height:100svh;padding:30px 17px 75px;display:none;align-items:center;justify-content:center}
 .page.active{display:flex}
-.card{width:min(760px,100%);background:rgba(16,10,35,.72);border:1px solid rgba(255,255,255,.13);box-shadow:0 20px 80px rgba(0,0,0,.45);backdrop-filter:blur(18px);border-radius:30px;padding:28px;overflow:hidden}
-.center{text-align:center}
-.kicker{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;opacity:.62}
-h1,h2{font-family:"Playfair Display",serif;line-height:1.05;margin:12px 0 18px}
-h1{font-size:clamp(2.7rem,10vw,5.7rem)}
-h2{font-size:clamp(2rem,7vw,3.4rem)}
-p{font-size:1.04rem;line-height:1.75;color:rgba(255,255,255,.84)}
-.small{font-size:.88rem;opacity:.6}
-.btn{border:0;border-radius:999px;padding:14px 21px;background:linear-gradient(135deg,#ff5d9e,#8d70ff);color:#fff;font-weight:700;cursor:pointer;box-shadow:0 10px 30px rgba(175,85,255,.25);transition:.2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.secondary{background:rgba(255,255,255,.08);box-shadow:none;border:1px solid rgba(255,255,255,.12)}
-.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
-.heart{font-size:4rem;animation:float 3s ease-in-out infinite;display:inline-block}
-@keyframes float{50%{transform:translateY(-9px) rotate(3deg)}}
-.typing{min-height:3.5em}
-.quote{font-family:"Playfair Display",serif;font-style:italic;font-size:1.35rem;line-height:1.6;text-align:center;margin:24px 0}
-.timeline{display:grid;gap:12px;margin-top:20px}
-.memory{padding:18px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);transform:translateX(-10px);opacity:0;transition:.5s}
-.memory.show{transform:none;opacity:1}
-.memory b{display:block;margin-bottom:5px}
-.polaroids{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
-.polaroid{background:#f5eee6;color:#20182b;padding:10px 10px 22px;transform:rotate(-2deg);box-shadow:0 15px 35px rgba(0,0,0,.3)}
-.polaroid:nth-child(2){transform:rotate(3deg);margin-top:15px}
-.polaroid:nth-child(3){transform:rotate(-1deg)}
-.fakephoto{height:150px;border-radius:4px;background:linear-gradient(145deg,#211443,#7d5cff 45%,#ff7cae);display:grid;place-items:center;font-size:2.2rem}
-.polaroid span{display:block;text-align:center;font-family:"Playfair Display",serif;margin-top:9px}
-.gamebox{text-align:center;padding:25px;border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1)}
-.progress{height:7px;background:rgba(255,255,255,.1);border-radius:20px;overflow:hidden;margin:20px 0}
-.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff5d9e,#8d70ff);transition:width .5s}
-.choice{display:grid;gap:10px;margin-top:20px}
-.choice button{padding:15px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);color:#fff;cursor:pointer}
-.choice button:hover{background:rgba(255,255,255,.11)}
-.confession{font-size:clamp(1.15rem,3.5vw,1.45rem);line-height:1.85}
-.signature{font-family:"Playfair Display",serif;font-size:1.4rem;font-style:italic}
-.nav{position:fixed;z-index:10;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:7px;padding:7px;border-radius:999px;background:rgba(10,7,20,.78);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px)}
-.dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(255,255,255,.3);padding:0;cursor:pointer}
-.dot.active{background:#ff7cb4;box-shadow:0 0 10px #ff7cb4}
-.music{position:fixed;right:15px;top:15px;z-index:11}
-.toast{position:fixed;left:50%;top:18px;transform:translate(-50%,-130%);z-index:20;background:rgba(20,12,40,.92);border:1px solid rgba(255,255,255,.13);padding:12px 16px;border-radius:14px;transition:.35s;max-width:90%}
-.toast.show{transform:translate(-50%,0)}
-@media(max-width:560px){
- .card{padding:22px 18px;border-radius:24px}
- .polaroids{grid-template-columns:1fr}
- .polaroid{width:75%;margin:auto!important}
- p{font-size:.98rem}
-}
-</style>
-</head>
-<body>
-<div id="stars"></div><div id="stars2"></div>
-<div class="toast" id="toast"></div>
-<button class="btn secondary music" id="musicBtn" onclick="toggleAmbient()">♫ ambience</button>
+.card{width:min(780px,100%);padding:30px;border-radius:30px;background:rgba(31,8,21,.74);border:1px solid rgba(255,195,220,.16);box-shadow:0 25px 90px rgba(0,0,0,.45);backdrop-filter:blur(18px)}
+.kicker{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;opacity:.62}
+h2{font-family:"Playfair Display",serif;font-size:clamp(2rem,7vw,3.5rem);line-height:1.08;margin:10px 0 22px}
+p{font-size:1.04rem;line-height:1.78;color:rgba(255,255,255,.88)}
+.actions{display:flex;justify-content:center;margin-top:25px}
+.btn{border:0;border-radius:999px;padding:14px 23px;color:#fff;font-weight:700;background:linear-gradient(135deg,#ff6da8,#a978ff);cursor:pointer;box-shadow:0 12px 30px rgba(230,90,160,.22)}
+.nav{position:fixed;z-index:10;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:7px 9px;border-radius:999px;background:rgba(10,4,10,.8);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px)}
+.dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.28)}.dot.active{background:#ff78b2;box-shadow:0 0 10px #ff78b2}
+@media(max-width:580px){.card{padding:22px 18px;border-radius:24px}p{font-size:1rem}}
+</style></head><body>
+<div id="stars"></div><div id="tulips"></div><div id="hearts"></div>
 
 <section class="page active">
-<div class="card center">
-  <div class="heart">🫂</div>
-  <div class="kicker">a tiny website made for one person</div>
-  <h1>Hey Nonu.</h1>
-  <p class="typing" id="typeText"></p>
-  <div class="actions"><button class="btn" onclick="next()">Tap to continue →</button></div>
-  <p class="small">Best viewed with headphones… but only if you want. 🥹</p>
-</div>
+ <div class="card">
+  <div class="kicker">🌸 OPENING</div>
+  <h2>🌸 OPENING</h2>
+  <p>Hey Nonu 😭🫂</p><p>Pata nahi tum ye dekh ke kya bologi😭</p><p>But mujhe aapse kuch baatein bolni thi jo main shayad chat ya call pe properly kabhi nahi bol paata</p><p>Isliye socha ek website hi bana deta hoon 😭😂</p><p>Bas please end tak dekh lena.</p><p>Aur haan, beech mein judge mat karna mujhe 🥹❤️</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
 </section>
-
-<section class="page">
-<div class="card">
-  <div class="kicker">chapter 01 · somehow</div>
-  <h2>I don't know when it happened.</h2>
-  <p>I don't remember the exact moment when you stopped being just someone I talked to and became someone I genuinely wanted in my life.</p>
-  <p>It happened somewhere between the stupid jokes, the late-night conversations, the teasing, the repost rituals, and all the little things that probably looked ordinary from the outside.</p>
-  <div class="quote">“Some people become important quietly. You became important without me even noticing.”</div>
-  <div class="actions"><button class="btn" onclick="next()">Next 🥹</button></div>
-</div>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">🌙 PATA NAHI KAB...</div>
+  <h2>🌙 PATA NAHI KAB...</h2>
+  <p>Pata nahi kab tum mere liye itni important ho gayi</p><p>Pehle bas tumse baat karna acha lagta tha.</p><p>Phir aapka message aata tha toh automatically smile aa jaati thi 😭</p><p>Aur ab pata nahi kya scene hai...</p><p>Meri life mein kuch bhi hota hai  acha ho ya bura</p><p>mera mann sabse pehle tumhe batane ka karta hai.</p><p>College ka tension ho, future ko lekar confusion ho, koi stupid si baat ho, ya bas mood kharab ho...</p><p>I just want to tell you everything.</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
 </section>
-
-<section class="page">
-<div class="card">
-  <div class="kicker">chapter 02 · our little universe</div>
-  <h2>Things that feel very us.</h2>
-  <div class="polaroids">
-    <div class="polaroid"><div class="fakephoto">🌙</div><span>late night talks</span></div>
-    <div class="polaroid"><div class="fakephoto">😝</div><span>repost investigations</span></div>
-    <div class="polaroid"><div class="fakephoto">📸</div><span>photo booth dreams</span></div>
-  </div>
-  <p class="small center">These are placeholders—you can replace them with your real photos later.</p>
-  <div class="actions"><button class="btn" onclick="next()">Keep going →</button></div>
-</div>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">🫂 AAPKE SAATH MAIN SAFE FEEL KARTA HOON</div>
+  <h2>🫂 AAPKE SAATH MAIN SAFE FEEL KARTA HOON</h2>
+  <p>Mujhe nahi pata main ye properly explain kar paunga ya nahi...</p><p>But I genuinely feel safe around you.</p><p>Tumse main woh cheezein bhi bol deta hoon jo normally kisi ko nahi bolta.</p><p>Apni insecurities, apna overthinking, college ka pressure, future ka confusion, stupid baatein... sab.</p><p>Aur sabse ajeeb cheez ye hai ki jab aapse baat hoti hai na, meri problems thodi chhoti lagne lagti hain.</p><p>I don&#x27;t know why</p><p>Bas aapke saath mujhe lagta hai ki mujhe har waqt strong ya perfect banne ki zarurat nahi hai.</p><p>Tum mujhe genuinely ghar jaisa feel karwati ho. 🥹🫂</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
 </section>
-
-<section class="page">
-<div class="card">
-  <div class="kicker">chapter 03 · the messy parts</div>
-  <h2>Even the complicated parts matter.</h2>
-  <div class="timeline">
-    <div class="memory"><b>🫂 “I feel safe with you.”</b>Somehow, talking to you became a place where I could say things I usually keep inside.</div>
-    <div class="memory"><b>😂 Bhoondu & cutu</b>The random teasing, jealousy jokes, “block” jokes and the things only we understand.</div>
-    <div class="memory"><b>🌧️ The difficult days</b>Family pressure, confusion, college stress, and those moments when circumstances made everything harder.</div>
-    <div class="memory"><b>❤️ And still...</b>We kept finding our way back to a conversation, a laugh, or a little bit of comfort.</div>
-  </div>
-  <div class="actions"><button class="btn" onclick="next()">One more →</button></div>
-</div>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">😂 HUM DONO KA PAGALPAN</div>
+  <h2>😂 HUM DONO KA PAGALPAN</h2>
+  <p>Honestly, hum dono normal logon ki tarah behave hi nahi karte 😭</p><p>Kabhi repost investigation 😭😭</p><p>Kabhi ek dusre ko jealous karne ki koshish 😭</p><p>Kabhi “mine” wale comments 🧿😋(who sirf mene kiya)</p><p>Aapka mujhe bhoondu bolna 😭</p><p>Photo booth ki baatein 🥹</p><p>Proposal kaisa hona chahiye woh discuss karna 😭</p><p>Aur kabhi random serious conversations jahan pata hi nahi chalta time kaise nikal gaya.</p><p>Ye chhoti-chhoti cheezein shayad kisi aur ke liye kuch nahi hain.</p><p>But mere liye hain.</p><p>Bohot hain. ❤️</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
 </section>
-
-<section class="page">
-<div class="card">
-  <div class="kicker">chapter 04 · tiny game</div>
-  <h2>Okay, one question. 😭</h2>
-  <div class="gamebox">
-    <p id="gameQ">If you could keep one thing from our conversations forever, what would it be?</p>
-    <div class="choice">
-      <button onclick="gameAnswer('the laughs 😭')">The laughs 😭</button>
-      <button onclick="gameAnswer('the late-night talks 🌙')">The late-night talks 🌙</button>
-      <button onclick="gameAnswer('the stupid little moments 🥹')">The stupid little moments 🥹</button>
-      <button onclick="gameAnswer('all of it 🫂')">All of it 🫂</button>
-    </div>
-    <div class="progress"><i id="prog"></i></div>
-  </div>
-  <p class="small center">There is no wrong answer. I just wanted to make you smile.</p>
-</div>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">🌧️ JO EASY NAHI THA</div>
+  <h2>🌧️ JO EASY NAHI THA</h2>
+  <p>Haan, humare beech sab kuch hamesha easy nahi raha.</p><p>Kabhi block, kabhi unblock...</p><p>Kabhi family ka scene...</p><p>Kabhi phone check...</p><p>Kabhi hum dono ka overthinking...</p><p>Aur honestly, jab aapke papa ne phone check kiya aur aapko meri wajah se questions face karne pade, mujhe bohot bura laga.</p><p>Not because you blocked me.</p><p>Mujhe bura isliye laga kyunki main kabhi nahi chahta ki meri wajah se aapko ghar mein problem ho.</p><p>Tum mere liye important ho nonu🫠</p><p>Isliye aapki peace aur safety bhi mere liye important hai.</p><p>Main kabhi nahi chahta ki meri feelings ki wajah se aap kisi trouble mein pado. 🫂</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
 </section>
-
-<section class="page">
-<div class="card">
-  <div class="kicker">chapter 05 · what I really wanted to say</div>
-  <h2>Okay… no more hiding behind jokes.</h2>
-  <div class="confession">
-    <p>Nonu, I genuinely love you. ❤️</p>
-    <p>Not just because I like talking to you. Not just because we flirt or make each other jealous or because I enjoy our late-night calls.</p>
-    <p>I love the way I can be myself around you. I love that I can tell you about my stupid thoughts, my insecurities, my college stress, my future, and all the things I don't know how to explain to everyone else.</p>
-    <p>With you, I feel safe. Sometimes you genuinely feel like <strong>home</strong> to me. 🥹🫂</p>
-    <p>I don't think you're perfect, and I don't need you to be. And I don't want you to become some perfect version of yourself for me either.</p>
-    <p>I just like <strong>you</strong>. Exactly as you are.</p>
-  </div>
-  <div class="actions"><button class="btn" onclick="next()">There's one last thing…</button></div>
-</div>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">❤️ WHY YOU?</div>
+  <h2>❤️ WHY YOU?</h2>
+  <p>Mujhe nahi pata main exactly explain kar sakta hoon ki mujhe aap hi kyun itni pasand ho.</p><p>Maybe because you&#x27;re just... you.</p><p>Aapka mujhe tease karna.</p><p>Aapka meri stupid baatein sunna.</p><p>Aapka mujhe samajhna.</p><p>Aapka khud ki problems ke beech bhi mujhe comfort karna.</p><p>Aapke saath woh comfort jo mujhe kahin aur easily nahi milta.</p><p>Aur jab tumhe mujhe bola tha ki aap mujhe “for who I am” like karti ho...</p><p>Pata nahi kyun, but woh baat mere dimaag mein reh gayi. 🥹</p><p>Because kabhi-kabhi main genuinely feel karta hoon ki maybe main enough nahi hoon.</p><p>But aapke saamne mujhe aisa feel nahi hota ki mujhe perfect banne ki zarurat hai.</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
 </section>
-
-<section class="page">
-<div class="card center">
-  <div class="heart">🌹</div>
-  <div class="kicker">the question</div>
-  <h2>Nonu, will you let me love you?</h2>
-  <p>I don't want an answer because you feel pressured. I don't want a perfect answer either.</p>
-  <p>I just wanted you to know what is in my heart. Whatever you feel, tell me honestly. I'll respect it. ❤️</p>
-  <div class="actions">
-    <button class="btn" onclick="answer('You just made me blush 😭❤️')">🥹 I feel it too</button>
-    <button class="btn secondary" onclick="answer('Take your time. I mean that. 🫂')">🫂 I need some time</button>
-  </div>
-  <p id="finalReply" class="quote"></p>
-  <p class="signature">— Archit, your bhoondu 🫂</p>
-</div>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">🥹 YOU’RE MY HOME</div>
+  <h2>🥹 YOU’RE MY HOME</h2>
+  <p>Ye shayad sabse cheesy line hai jo main bolne wala hoon 😭</p><p>But you are like my home.</p><p>Not because I expect you to fix everything for me.</p><p>Bas because tumse baat karte waqt mujhe lagta hai ki I can actually be myself.</p><p>Main emotional ho sakta hoon.</p><p>Main stupid ho sakta hoon.</p><p>Main overthink kar sakta hoon.</p><p>Main apni problems ke baare mein baat kar sakta hoon.</p><p>Aur mujhe lagta hai ki aap mujhe judge nahi karengi.</p><p>That&#x27;s what “home” means to me.</p><p>Aapke saath mujhe thoda sukoon milta hai. 🫂❤️</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
 </section>
-
+<section class="page ">
+ <div class="card">
+  <div class="kicker">💌 JO MAIN ACTUALLY BOLNA CHAHTA HOON</div>
+  <h2>💌 JO MAIN ACTUALLY BOLNA CHAHTA HOON</h2>
+  <p>Nonu...</p><p>I genuinely love you. 😭❤️</p><p>Main ye sirf isliye nahi bol raha kyunki hum flirt karte hain, ya late-night baatein hoti hain, ya hum ek dusre ko tease karte hain.</p><p>Main isliye bol raha kyunki I genuinely feel it</p><p>Aap meri life mein ek aisi person ban gayi ho jisko main har important cheez batana chahta hoon</p><p>Jaha me efforts dena chahta hoon harr cheez ke liye hona chahta hoon</p><p>Aur haan, shayad main bohot overthink karta hoon.</p><p>Kabhi stupid harkatein karta hoon.</p><p>Kabhi jealous ho jaata hoon. 😭(Humesha)</p><p>But jo feel karta hoon woh fake nahi hai.</p><p>I genuinely care about you.</p><p>Aap khush hoti ho toh mujhe genuinely acha lagta hai.</p><p>Aap upset hoti ho toh mujhe bhi bura lagta hai.</p><p>And whenever something happens in my life...</p><p>I look for you.</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
+</section>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">🌹 MY CONFESSION</div>
+  <h2>🌹 MY CONFESSION</h2>
+  <p>Nonu...</p><p>Pata nahi future mein hum kya honge.</p><p>Pata nahi life hum dono ko kahan le jayegi.</p><p>Pata nahi aap ye sab padhne ke baad kya bologi 😭</p><p>But I know what I feel right now.</p><p>And I don&#x27;t want to hide it anymore.</p><p>I LOVE YOU. ❤️</p><p>Bohot.</p><p>Aap mere liye bohot special ho.</p><p>Shayad jitna main words mein explain kar pa raha hoon usse bhi zyada.</p><p>Mujhe aapse koi forced answer nahi chahiye.</p><p>Aapko jo feel hota hai, please woh honestly batana.</p><p>No pressure.</p><p>No expectations.</p><p>Bas main chahta tha ki aapko pata ho ki mere dil mein kya hai.</p><p>And whatever your answer is, I&#x27;ll respect it. 🫂❤️</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
+</section>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">🫶 LAST THING</div>
+  <h2>🫶 LAST THING</h2>
+  <p>Bas ek last thing...</p><p>Thank you.</p><p>Meri life ke itne confusing time mein mere saath rehne ke liye.</p><p>Meri stupid baatein sunne ke liye.</p><p>Mujhe samajhne ke liye.</p><p>Mujhe comfort karne ke liye.</p><p>Aur mujhe ye feel karwane ke liye ki I can be myself.</p><p>I don&#x27;t know what happens next.</p><p>I’m not in search of any relationship but u change I feel it</p><p>But I&#x27;m really, really glad I met you.</p><p>And if I ever get the chance to tell you this in person...</p><p>I&#x27;ll probably still get nervous and forget half the things I wanted to say. 😭😂</p><p>So for now...</p><p>I love you, Nonu. 🥹❤️</p><p>— Aapka bhoondu 🫂</p>
+  <div class="actions"><button class="btn" onclick="next()">Continue →</button></div>
+ </div>
+</section>
+<section class="page ">
+ <div class="card">
+  <div class="kicker">🎵 MUSIC / WEBSITE NOTES</div>
+  <h2>🎵 MUSIC / WEBSITE NOTES</h2>
+  <p>Song: Hareya — Arijit Singh</p><p>Idea:</p><p>Music should begin after the first interaction/tap, because phone browsers often block autoplay.</p><p>Visuals:</p><p>- Soft pink love theme</p><p>- Floating hearts</p><p>- Romantic night sky</p><p>- Polaroid/scrapbook memories</p><p>- Gentle cinematic transitions</p><p>- Final confession with a beautiful reveal</p><p>Photos:</p><p>[Add your real photos/screenshots here later.]</p>
+  
+ </div>
+</section>
 <div class="nav" id="nav"></div>
-
 <script>
-const pages=[...document.querySelectorAll('.page')];
-let current=0;
-const nav=document.getElementById('nav');
-pages.forEach((_,i)=>{
- const d=document.createElement('button'); d.className='dot'+(i===0?' active':''); d.onclick=()=>go(i); nav.appendChild(d);
-});
-function go(i){
- current=Math.max(0,Math.min(pages.length-1,i));
- pages.forEach((p,n)=>p.classList.toggle('active',n===current));
- [...nav.children].forEach((d,n)=>d.classList.toggle('active',n===current));
- window.scrollTo({top:0,behavior:'smooth'});
- reveal();
-}
+const pages=[...document.querySelectorAll('.page')],nav=document.getElementById('nav');let current=0;
+pages.forEach((_,i)=>{let b=document.createElement('button');b.className='dot'+(i===0?' active':'');b.onclick=()=>go(i);nav.appendChild(b)});
+function go(i){current=Math.max(0,Math.min(pages.length-1,i));pages.forEach((p,n)=>p.classList.toggle('active',n===current));[...nav.children].forEach((d,n)=>d.classList.toggle('active',n===current));scrollTo({top:0,behavior:'smooth'})}
 function next(){go(current+1)}
-function reveal(){
- document.querySelectorAll('.memory').forEach((m,i)=>setTimeout(()=>m.classList.add('show'),100+i*150));
-}
-function toast(t){
- const el=document.getElementById('toast'); el.textContent=t; el.classList.add('show');
- setTimeout(()=>el.classList.remove('show'),2200);
-}
-function gameAnswer(t){
- document.getElementById('gameQ').innerHTML=`<strong>Good choice. 😭</strong><br><br>${t}<br><br>Honestly, I would keep all of it. 🫂`;
- document.getElementById('prog').style.width='100%';
- toast('Okay, that was cute. 🥹');
-}
-function answer(t){
- document.getElementById('finalReply').textContent=t;
- burst();
-}
-function burst(){
- for(let i=0;i<18;i++){
-  const s=document.createElement('span');
-  s.textContent=['❤️','🥹','🫂','✨','🌹'][Math.floor(Math.random()*5)];
-  s.style.cssText=`position:fixed;left:${40+Math.random()*20}%;top:55%;font-size:${16+Math.random()*24}px;z-index:30;pointer-events:none;animation:fly 1.8s ease-out forwards;`;
-  document.body.appendChild(s); setTimeout(()=>s.remove(),1900);
- }
-}
-const style=document.createElement('style');
-style.textContent='@keyframes fly{to{transform:translate('+(-180+Math.random()*360)+'px,'+(-300-Math.random()*250)+'px) rotate(360deg);opacity:0}}';
-document.head.appendChild(style);
-
-let text='I made this because there are some things I can say better when I stop overthinking and just let my heart talk.';
-let idx=0;
-function type(){
- const el=document.getElementById('typeText');
- if(idx<text.length){el.textContent+=text[idx++];setTimeout(type,28)}
-}
-type(); reveal();
-
-for(let i=0;i<110;i++){
- const s=document.createElement('span'); s.className='star';
- s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
- s.style.animationDelay=(Math.random()*3)+'s';
- s.style.opacity=(.2+Math.random()*.7);
- document.getElementById('stars').appendChild(s);
-}
-
-let audioCtx,osc,gain,playing=false;
-function toggleAmbient(){
- if(!audioCtx){
-  audioCtx=new (window.AudioContext||window.webkitAudioContext)();
-  osc=audioCtx.createOscillator(); gain=audioCtx.createGain();
-  osc.type='sine'; osc.frequency.value=220; gain.gain.value=.015;
-  osc.connect(gain).connect(audioCtx.destination); osc.start();
- }
- playing=!playing; gain.gain.value=playing?.015:0;
- document.getElementById('musicBtn').textContent=playing?'♫ ambience on':'♫ ambience';
-}
-</script>
-</body>
-</html>
+for(let i=0;i<100;i++){let s=document.createElement('span');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';document.getElementById('stars').appendChild(s)}
+for(let i=0;i<20;i++){let t=document.createElement('span');t.className='tulip';t.textContent='🌷';t.style.left=Math.random()*100+'%';t.style.animationDelay=Math.random()*6+'s';document.getElementById('tulips').appendChild(t)}
+const hc=['♡','♥','💗','💖','💕','🌸'];
+function heart(){let h=document.createElement('span');h.className='heart';h.textContent=hc[Math.floor(Math.random()*hc.length)];h.style.left=Math.random()*100+'%';h.style.fontSize=(12+Math.random()*23)+'px';h.style.setProperty('--d',(-80+Math.random()*160)+'px');h.style.animationDuration=(7+Math.random()*7)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),15000)}
+for(let i=0;i<10;i++)setTimeout(heart,i*450);setInterval(heart,900);
+</script></body></html>
